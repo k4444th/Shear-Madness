@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://ueb0hs24bv4r"]
+
+[ext_resource type="Texture2D" uid="uid://cv8bhhvewej1i" path="res://assets/images/lama/back.png" id="1_jkjqc"]
+[ext_resource type="Texture2D" uid="uid://b7r0ln3rp2jdv" path="res://assets/images/lama/front.png" id="2_ushgq"]
+[ext_resource type="Texture2D" uid="uid://bat15xwdm3hoe" path="res://assets/images/lama/right.png" id="3_nclyn"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8ibx7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_jkjqc")
+}],
+"loop": true,
+"name": &"back",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ushgq")
+}],
+"loop": true,
+"name": &"front",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_nclyn")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}]
+
+[node name="Lama" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_8ibx7")
+animation = &"right"
