@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var direction := Vector2(0.0, 0.0)
 
-@export var speed := 100
+@export var speed := 25
 
 @onready var sprite = $Sprite
 
@@ -22,8 +22,8 @@ func setAnimation():
 		sprite.animation = "back"
 	
 	if direction.x != 0:
-		sprite.animation = "right"
-		if direction.x < 0:
+		sprite.animation = "side"
+		if direction.x > 0:
 			sprite.flip_h = true
 		else:
 			sprite.flip_h = false

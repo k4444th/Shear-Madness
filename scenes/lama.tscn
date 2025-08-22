@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cv8bhhvewej1i" path="res://assets/images/lama/back.png" id="1_jkjqc"]
 [ext_resource type="Script" uid="uid://be6vu5tueyqp6" path="res://scripts/lama.gd" id="1_ushgq"]
 [ext_resource type="Texture2D" uid="uid://b7r0ln3rp2jdv" path="res://assets/images/lama/front.png" id="2_ushgq"]
-[ext_resource type="Texture2D" uid="uid://bat15xwdm3hoe" path="res://assets/images/lama/right.png" id="3_nclyn"]
+[ext_resource type="Texture2D" uid="uid://b4dcipbs3hra" path="res://assets/images/lama/side.png" id="4_ushgq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nclyn"]
 animations = [{
@@ -25,10 +25,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_nclyn")
+"texture": ExtResource("4_ushgq")
 }],
 "loop": true,
-"name": &"right",
+"name": &"side",
 "speed": 5.0
 }]
 
@@ -37,4 +37,4 @@ script = ExtResource("1_ushgq")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_nclyn")
-animation = &"right"
+animation = &"side"

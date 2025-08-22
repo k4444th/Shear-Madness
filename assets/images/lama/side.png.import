@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bat15xwdm3hoe"
-path="res://.godot/imported/right.png-c98d4555ad20b84346116e9b15db65d2.ctex"
+uid="uid://b4dcipbs3hra"
+path="res://.godot/imported/side.png-f372451d414f50be7883db214ecedc35.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/lama/right.png"
-dest_files=["res://.godot/imported/right.png-c98d4555ad20b84346116e9b15db65d2.ctex"]
+source_file="res://assets/images/lama/side.png"
+dest_files=["res://.godot/imported/side.png-f372451d414f50be7883db214ecedc35.ctex"]
 
 [params]
 
