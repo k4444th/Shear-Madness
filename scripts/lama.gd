@@ -4,7 +4,7 @@ var direction := Vector2(0.0, 0.0)
 
 @export var speed := 25
 
-@onready var sprite = $Sprite
+@onready var sprite := $Sprite
 
 func _process(_delta: float) -> void:
 	getKeyboardInputs()
