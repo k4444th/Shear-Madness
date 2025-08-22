@@ -14,6 +14,7 @@ func _process(_delta: float) -> void:
 func getKeyboardInputs():
 	direction.x = Input.get_axis("Left", "Right")
 	direction.y = Input.get_axis("Up", "Down")
+	direction = direction.normalized()
 
 func setAnimation():
 	if direction.y >= 0:
