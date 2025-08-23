@@ -19,11 +19,6 @@ func moveTo(destPos: Vector2):
 	destination = destPos
 	calculateDirection(destPos)
 	
-	if direction.y < 0:
-		sprite.flip_h = true
-	else:
-		sprite.flip_h = false
-	
 	timer.start()
 
 func updateDest(destPos: Vector2):
@@ -35,17 +30,27 @@ func _on_timer_timeout() -> void:
 
 func _physics_process(_delta: float) -> void:
 	velocity = direction * speed
+	
+	if direction.x < 0:
+		sprite.flip_h = true
+	else:
+		sprite.flip_h = false
+		
 	move_and_slide()
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.collision_layer == 2:
-		die()
+		speed = 0
+		var tween = get_tree().create_tween()
+		if area.global_position < global_position:
+			tween.tween_property(sprite, "rotation", 1, 0.1)
+		else:
+			tween.tween_property(sprite, "rotation", -1, 0.1)
+		
+		await tween.finished
+		queue_free()
+		
 	elif area.collision_layer == 1:
 		touchedLama.emit()
-		shearLama()
-
-func die():
-	queue_free()
-
-func shearLama():
-	queue_free()
+		queue_free()
+	
