@@ -43,6 +43,7 @@ func spawnFarmer():
 	farmerInstance.global_position = spawnPos
 	add_child(farmerInstance)
 	lama.connect("posChanged", Callable(farmerInstance, "updateDest"))
+	farmerInstance.connect("touchedLama", Callable(lama, "looseWool"))
 	farmerInstance.moveTo(lama.global_position)
 
 func _on_timer_timeout() -> void:

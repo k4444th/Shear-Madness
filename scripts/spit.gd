@@ -21,3 +21,12 @@ func launch(targetPos: Vector2) -> void:
 	sprite.play("default")
 	velocity = (targetPos - global_position).normalized() * speed
 	rotation = velocity.angle() + 205
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area.collision_layer == 4:
+		speed = 0
+		sprite.play("explode")
+
+func _on_sprite_animation_finished() -> void:
+	if sprite.animation == "explode":
+		queue_free()

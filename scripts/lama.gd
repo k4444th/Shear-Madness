@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+var wool := 10
 var direction := Vector2(0.0, 0.0)
 var lastDirection := direction
 
@@ -46,9 +47,12 @@ func setAnimation():
 		else:
 			sprite.flip_h = false
 		
-	
 func moveSprite():
 	velocity = direction * speed
 	move_and_slide()
 	if speed < maxSpeed:
 			speed *= 1.025
+
+func looseWool():
+	wool -= 1
+	print(wool, " wool left")

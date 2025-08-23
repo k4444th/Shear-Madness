@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c62dq603ctixk"]
+[gd_scene load_steps=16 format=3 uid="uid://c62dq603ctixk"]
 
 [ext_resource type="Script" uid="uid://cw5paurk6bihx" path="res://scripts/spit.gd" id="1_3yca0"]
 [ext_resource type="Texture2D" uid="uid://hd4u4hfih6hh" path="res://assets/images/spit/spit1.png" id="2_ntusn"]
@@ -10,6 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://c25iu6pfx76so" path="res://assets/images/spit/spit6.png" id="7_fdse5"]
 [ext_resource type="Texture2D" uid="uid://cednjp01uk8hr" path="res://assets/images/spit/spit7.png" id="8_44s7f"]
 [ext_resource type="Texture2D" uid="uid://7vqfk5snak73" path="res://assets/images/spit/spit8.png" id="9_7qe7p"]
+[ext_resource type="Texture2D" uid="uid://d02vkpsj43pm0" path="res://assets/images/spit/explode1.png" id="11_sbw86"]
+[ext_resource type="Texture2D" uid="uid://0i5l6vq12t68" path="res://assets/images/spit/explode2.png" id="12_cbmou"]
+[ext_resource type="Texture2D" uid="uid://d3irqdw2xp85f" path="res://assets/images/spit/explode3.png" id="13_fdse5"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mwt0b"]
 animations = [{
@@ -44,11 +47,43 @@ animations = [{
 "loop": false,
 "name": &"default",
 "speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_cbrpu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_sbw86")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_cbmou")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_fdse5")
+}],
+"loop": false,
+"name": &"explode",
+"speed": 15.0
 }]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ntusn"]
+radius = 6.0
 
 [node name="Spit" type="CharacterBody2D"]
 script = ExtResource("1_3yca0")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
-position = Vector2(-9, 10)
+position = Vector2(-11, 12)
 sprite_frames = SubResource("SpriteFrames_mwt0b")
+animation = &"explode"
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-14, 15)
+shape = SubResource("CircleShape2D_ntusn")
+
+[connection signal="animation_finished" from="Sprite" to="." method="_on_sprite_animation_finished"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
