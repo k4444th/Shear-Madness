@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://t5ew5c8xd66o"]
+
+[ext_resource type="Script" uid="uid://c0rlgwyy8qr0h" path="res://scripts/farmer.gd" id="1_2qlof"]
+[ext_resource type="Texture2D" uid="uid://bx7m4w0espvvt" path="res://assets/images/farmer/farmer1.png" id="1_vltvv"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2qlof"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_vltvv")
+}],
+"loop": true,
+"name": &"farmer1",
+"speed": 5.0
+}]
+
+[node name="Farmer" type="CharacterBody2D"]
+script = ExtResource("1_2qlof")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 4)
+sprite_frames = SubResource("SpriteFrames_2qlof")
+animation = &"farmer1"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.25
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

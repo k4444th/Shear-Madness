@@ -15,7 +15,7 @@ func _physics_process(_delta: float) -> void:
 	else:
 		queue_free()
 
-func launch(targetPos) -> void:
+func launch(targetPos: Vector2) -> void:
 	spitTargetPos = targetPos
 	visible = true
 	sprite.play("default")
