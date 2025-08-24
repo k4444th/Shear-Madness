@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var wool := 10
+var wool := 9
 var direction := Vector2(0.0, 0.0)
 var lastDirection := direction
 

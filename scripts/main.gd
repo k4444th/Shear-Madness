@@ -6,11 +6,14 @@ var targetPos: Vector2
 @onready var lama := $Lama
 @onready var timer := $Timer
 @onready var camera := $Lama/Camera2D
+@onready var background := $Background
+@onready var woolmeter := $CanvasLayer/Woolmeter
 
 @onready var spitScene := preload("res://scenes/spit.tscn")
 @onready var farmerScene := preload("res://scenes/farmer.tscn")
 
 func _ready() -> void:
+	positionWoolmeter()
 	timer.start()
 	spawnFarmer()
 
@@ -20,6 +23,9 @@ func _input(event):
 		add_child(spitInstance)
 		spitInstance.global_position = lama.global_position
 		spitInstance.launch(lama.get_global_mouse_position())
+
+func positionWoolmeter():
+	pass
 
 func spawnFarmer():
 	var side = randi() % 4
@@ -38,8 +44,8 @@ func spawnFarmer():
 			spawnPos.y = camera.get_viewport().size.y / camera.get_canvas_transform().x[0]
 		3:
 			spawnPos.x = camera.get_viewport().size.x / camera.get_canvas_transform().x[0]
-			spawnPos.y = randf_range(inverse.origin.y, camera.get_viewport().size.y / camera.get_canvas_transform().x[0])
-	
+			spawnPos.y =	 randf_range(inverse.origin.y, camera.get_viewport().size.y / camera.get_canvas_transform().x[0])
+		
 	var farmerInstance = farmerScene.instantiate()
 	farmerInstance.global_position = spawnPos
 	add_child(farmerInstance)

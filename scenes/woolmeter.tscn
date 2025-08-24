@@ -1,0 +1,50 @@
+[gd_scene load_steps=12 format=3 uid="uid://b04gjv6yrusja"]
+
+[ext_resource type="Texture2D" uid="uid://qqp701xhwciu" path="res://assets/images/woolmeter/Woolmeter.png" id="1_udgig"]
+[ext_resource type="Texture2D" uid="uid://bnatftds2o2bw" path="res://assets/images/woolmeter/wool1.png" id="2_2daem"]
+[ext_resource type="Script" uid="uid://b25qkep535qsk" path="res://scripts/woolmeter.gd" id="2_51u80"]
+[ext_resource type="Texture2D" uid="uid://b1fe5qtkvbnnn" path="res://assets/images/woolmeter/wool2.png" id="3_51u80"]
+[ext_resource type="Texture2D" uid="uid://ba4sibxt4evxl" path="res://assets/images/woolmeter/wool3.png" id="4_lne7a"]
+[ext_resource type="Texture2D" uid="uid://bmi3f8w7ixabb" path="res://assets/images/woolmeter/wool4.png" id="5_isoi2"]
+[ext_resource type="Texture2D" uid="uid://cb0amdv0nesi6" path="res://assets/images/woolmeter/wool5.png" id="6_ni2ng"]
+[ext_resource type="Texture2D" uid="uid://p11nnhc63xan" path="res://assets/images/woolmeter/wool6.png" id="7_qv0ee"]
+[ext_resource type="Texture2D" uid="uid://8j8skcn3qsle" path="res://assets/images/woolmeter/wool7.png" id="8_ocejj"]
+[ext_resource type="Texture2D" uid="uid://drarjtex1v4ki" path="res://assets/images/woolmeter/wool8.png" id="9_c0w1x"]
+[ext_resource type="Texture2D" uid="uid://s0skduehy6ot" path="res://assets/images/woolmeter/wool9.png" id="10_xwctb"]
+
+[node name="Woolmeter" type="Sprite2D"]
+texture = ExtResource("1_udgig")
+script = ExtResource("2_51u80")
+
+[node name="Wool0" type="ColorRect" parent="."]
+offset_left = -28.0
+offset_top = -3.0
+offset_right = 8.0
+offset_bottom = 3.0
+
+[node name="Wool1" type="Sprite2D" parent="."]
+texture = ExtResource("2_2daem")
+
+[node name="Wool2" type="Sprite2D" parent="."]
+texture = ExtResource("3_51u80")
+
+[node name="Wool3" type="Sprite2D" parent="."]
+texture = ExtResource("4_lne7a")
+
+[node name="Wool4" type="Sprite2D" parent="."]
+texture = ExtResource("5_isoi2")
+
+[node name="Wool5" type="Sprite2D" parent="."]
+texture = ExtResource("6_ni2ng")
+
+[node name="Wool6" type="Sprite2D" parent="."]
+texture = ExtResource("7_qv0ee")
+
+[node name="Wool7" type="Sprite2D" parent="."]
+texture = ExtResource("8_ocejj")
+
+[node name="Wool8" type="Sprite2D" parent="."]
+texture = ExtResource("9_c0w1x")
+
+[node name="Wool9" type="Sprite2D" parent="."]
+texture = ExtResource("10_xwctb")
