@@ -30,23 +30,28 @@ func positionWoolmeter():
 	pass
 
 func spawnFarmer():
-	var side = randi() % 4
 	var spawnPos = Vector2()
 	var inverse = camera.get_canvas_transform().affine_inverse()
-
-	match side:
-		0:
-			spawnPos.x = randf_range(inverse.origin.x, camera.get_viewport().size.x / camera.get_canvas_transform().x[0])
-			spawnPos.y = inverse.origin.y
-		1:
-			spawnPos.x = inverse.origin.x
-			spawnPos.y = randf_range(inverse.origin.y, camera.get_viewport().size.y / camera.get_canvas_transform().x[0])
-		2:
-			spawnPos.x = randf_range(inverse.origin.x, camera.get_viewport().size.x / camera.get_canvas_transform().x[0])
-			spawnPos.y = camera.get_viewport().size.y / camera.get_canvas_transform().x[0]
-		3:
-			spawnPos.x = camera.get_viewport().size.x / camera.get_canvas_transform().x[0]
-			spawnPos.y =	 randf_range(inverse.origin.y, camera.get_viewport().size.y / camera.get_canvas_transform().x[0])
+	var posValid = false
+	
+	while !posValid:
+		var side = randi() % 4
+		match side:
+			0:
+				spawnPos.x = randf_range(inverse.origin.x, camera.get_viewport().size.x / camera.get_canvas_transform().x[0])
+				spawnPos.y = inverse.origin.y
+			1:
+				spawnPos.x = inverse.origin.x
+				spawnPos.y = randf_range(inverse.origin.y, camera.get_viewport().size.y / camera.get_canvas_transform().x[0])
+			2:
+				spawnPos.x = randf_range(inverse.origin.x, camera.get_viewport().size.x / camera.get_canvas_transform().x[0])
+				spawnPos.y = camera.get_viewport().size.y / camera.get_canvas_transform().y[0]
+			3:
+				spawnPos.x = camera.get_viewport().size.x / camera.get_canvas_transform().x[0]
+				spawnPos.y =	 randf_range(inverse.origin.y, camera.get_viewport().size.y / camera.get_canvas_transform().x[0])
+		
+		if spawnPos.x > background.rectCoords[0].x and spawnPos.x < background.rectCoords[1].x and spawnPos.y > background.rectCoords[0].y and spawnPos.y < background.rectCoords[1].y:
+			posValid = true
 		
 	var farmerInstance = farmerScene.instantiate()
 	farmerInstance.global_position = spawnPos
