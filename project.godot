@@ -18,6 +18,10 @@ boot_splash/use_filter=false
 boot_splash/image="uid://b4dcipbs3hra"
 config/icon="uid://b4dcipbs3hra"
 
+[display]
+
+window/size/mode=3
+
 [input]
 
 Up={

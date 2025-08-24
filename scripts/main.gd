@@ -5,7 +5,7 @@ var targetPos: Vector2
 
 @onready var lama := $Lama
 @onready var timer := $Timer
-@onready var camera := $Camera2D
+@onready var camera := $Lama/Camera2D
 
 @onready var spitScene := preload("res://scenes/spit.tscn")
 @onready var farmerScene := preload("res://scenes/farmer.tscn")
