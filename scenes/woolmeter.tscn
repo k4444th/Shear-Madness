@@ -17,28 +17,45 @@ texture = ExtResource("1_udgig")
 script = ExtResource("2_51u80")
 
 [node name="Wool1" type="Sprite2D" parent="."]
+position = Vector2(-28, 0)
 texture = ExtResource("2_2daem")
+offset = Vector2(2, 0)
 
 [node name="Wool2" type="Sprite2D" parent="."]
+position = Vector2(-24, 0)
 texture = ExtResource("3_51u80")
+offset = Vector2(2, 0)
 
 [node name="Wool3" type="Sprite2D" parent="."]
+position = Vector2(-20, 0)
 texture = ExtResource("4_lne7a")
+offset = Vector2(2, 0)
 
 [node name="Wool4" type="Sprite2D" parent="."]
+position = Vector2(-16, 0)
 texture = ExtResource("5_isoi2")
+offset = Vector2(2, 0)
 
 [node name="Wool5" type="Sprite2D" parent="."]
+position = Vector2(-12, 0)
 texture = ExtResource("6_ni2ng")
+offset = Vector2(2, 0)
 
 [node name="Wool6" type="Sprite2D" parent="."]
+position = Vector2(-8, 0)
 texture = ExtResource("7_qv0ee")
+offset = Vector2(2, 0)
 
 [node name="Wool7" type="Sprite2D" parent="."]
+position = Vector2(-4, 0)
 texture = ExtResource("8_ocejj")
+offset = Vector2(2, 0)
 
 [node name="Wool8" type="Sprite2D" parent="."]
 texture = ExtResource("9_c0w1x")
+offset = Vector2(2, 0)
 
 [node name="Wool9" type="Sprite2D" parent="."]
+position = Vector2(4, 0)
 texture = ExtResource("10_xwctb")
+offset = Vector2(2, 0)
