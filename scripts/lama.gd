@@ -11,6 +11,7 @@ var speed := initialSpeed
 @onready var sprite := $Sprite
 
 signal posChanged(position: Vector2)
+signal woolLevelChnaged(wool: int)
 
 func _process(_delta: float) -> void:
 	getKeyboardInputs()
@@ -55,4 +56,4 @@ func moveSprite():
 
 func looseWool():
 	wool -= 1
-	print(wool, " wool left")
+	woolLevelChnaged.emit(wool)

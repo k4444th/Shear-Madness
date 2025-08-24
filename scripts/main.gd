@@ -14,6 +14,8 @@ var targetPos: Vector2
 
 func _ready() -> void:
 	positionWoolmeter()
+	woolmeter.updateWool(9)
+	lama.connect("woolLevelChnaged", Callable(self, "updateWool"))
 	timer.start()
 	spawnFarmer()
 
@@ -52,6 +54,9 @@ func spawnFarmer():
 	lama.connect("posChanged", Callable(farmerInstance, "updateDest"))
 	farmerInstance.connect("touchedLama", Callable(lama, "looseWool"))
 	farmerInstance.moveTo(lama.global_position)
+
+func updateWool(wool: int):
+	woolmeter.updateWool(wool)
 
 func _on_timer_timeout() -> void:
 	spawnFarmer()

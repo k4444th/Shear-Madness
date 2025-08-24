@@ -1,10 +1,8 @@
 extends Sprite2D
 
-var wool = 0
-
 @onready var woolmeter := $"."
 
-func _ready():
+func updateWool(wool: int):
 	var woolElements = woolmeter.get_children()
 	for element in woolElements:
 		if int(str(element.name)[4]) <= wool:
