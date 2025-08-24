@@ -60,6 +60,8 @@ func updateWool(wool: int):
 
 func _on_timer_timeout() -> void:
 	spawnFarmer()
-	timer.start()
+	
 	if timer.wait_time > 0.5:
-		timer.wait_time *= 0.95
+		timer.wait_time *= 0.975
+		
+	timer.start()
