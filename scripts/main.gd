@@ -24,20 +24,21 @@ func _input(event):
 func spawnFarmer():
 	var side = randi() % 4
 	var spawnPos = Vector2()
+	var inverse = camera.get_canvas_transform().affine_inverse()
 
 	match side:
 		0:
-			spawnPos.x = randf_range(0, get_viewport().size.x)
-			spawnPos.y = 0
+			spawnPos.x = randf_range(inverse.origin.x, camera.get_viewport().size.x / camera.get_canvas_transform().x[0])
+			spawnPos.y = inverse.origin.y
 		1:
-			spawnPos.x = randf_range(0, get_viewport().size.x)
-			spawnPos.y = get_viewport().size.y
+			spawnPos.x = inverse.origin.x
+			spawnPos.y = randf_range(inverse.origin.y, camera.get_viewport().size.y / camera.get_canvas_transform().x[0])
 		2:
-			spawnPos.x = 0
-			spawnPos.y = randf_range(0, get_viewport().size.y)
+			spawnPos.x = randf_range(inverse.origin.x, camera.get_viewport().size.x / camera.get_canvas_transform().x[0])
+			spawnPos.y = camera.get_viewport().size.y / camera.get_canvas_transform().x[0]
 		3:
-			spawnPos.x = get_viewport().size.x
-			spawnPos.y = randf_range(0, get_viewport().size.y)
+			spawnPos.x = camera.get_viewport().size.x / camera.get_canvas_transform().x[0]
+			spawnPos.y = randf_range(inverse.origin.y, camera.get_viewport().size.y / camera.get_canvas_transform().x[0])
 	
 	var farmerInstance = farmerScene.instantiate()
 	farmerInstance.global_position = spawnPos
