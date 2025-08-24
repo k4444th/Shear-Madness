@@ -16,13 +16,6 @@
 texture = ExtResource("1_udgig")
 script = ExtResource("2_51u80")
 
-[node name="Wool0" type="ColorRect" parent="."]
-offset_left = -28.0
-offset_top = -3.0
-offset_right = 8.0
-offset_bottom = 3.0
-color = Color(0.978485, 0.96328, 0.859533, 1)
-
 [node name="Wool1" type="Sprite2D" parent="."]
 texture = ExtResource("2_2daem")
 
