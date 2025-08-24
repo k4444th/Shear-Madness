@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+var numFarmerSprites := 3
 var speed := 25
 var direction: Vector2
 var randAngle: float
@@ -9,6 +10,10 @@ var destination: Vector2
 @onready var sprite := $Sprite
 
 signal touchedLama()
+
+func _ready() -> void:
+	var skin = randi() % numFarmerSprites
+	sprite.animation = "farmer" + str(skin + 1)
 
 func calculateDirection(destPos: Vector2):
 	direction = (destPos - global_position).normalized()
