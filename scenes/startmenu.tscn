@@ -7,5 +7,10 @@
 script = ExtResource("1_u4tt2")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
 
 [node name="StartButton" parent="." instance=ExtResource("2_t0y3k")]
+offset_left = -43.0
+offset_right = 43.0
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]

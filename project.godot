@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Shear Madness"
-run/main_scene="uid://hit7gtc8l11g"
+run/main_scene="uid://dy28qprjs4wqe"
 config/features=PackedStringArray("4.4", "Forward Plus")
 boot_splash/bg_color=Color(0.920995, 0.920995, 0.920995, 1)
 boot_splash/use_filter=false
@@ -25,6 +25,10 @@ Gamemanger="*res://scripts/gamemanger.gd"
 [display]
 
 window/size/mode=3
+
+[gui]
+
+theme/custom_font="uid://bdeo7rrn25xpi"
 
 [input]
 
