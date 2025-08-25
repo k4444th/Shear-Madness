@@ -14,8 +14,6 @@ one_shot = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 100
-scale = Vector2(7.5, 7.5)
-transform = Transform2D(7.5, 0, 0, 7.5, 0, 0)
 
 [node name="Woolmeter" parent="CanvasLayer" instance=ExtResource("4_jyhfs")]
 top_level = true
@@ -27,7 +25,6 @@ position = Vector2(-586, -327)
 [node name="Lama" parent="." instance=ExtResource("1_o5qli")]
 
 [node name="Camera2D" type="Camera2D" parent="Lama"]
-zoom = Vector2(7.5, 7.5)
 position_smoothing_enabled = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

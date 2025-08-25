@@ -7,14 +7,17 @@ var targetPos: Vector2
 @onready var timer := $Timer
 @onready var camera := $Lama/Camera2D
 @onready var background := $Background
+@onready var hud := $CanvasLayer
 @onready var woolmeter := $CanvasLayer/Woolmeter
 
 @onready var spitScene := preload("res://scenes/spit.tscn")
 @onready var farmerScene := preload("res://scenes/farmer.tscn")
 
 func _ready() -> void:
+	hud.scale = Gamemanger.gameData["settings"]["zoom"]
 	positionWoolmeter()
 	woolmeter.updateWool(9)
+	camera.zoom = Gamemanger.gameData["settings"]["zoom"]
 	lama.connect("woolLevelChnaged", Callable(self, "updateWool"))
 	timer.start()
 	spawnFarmer()
