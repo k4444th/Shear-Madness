@@ -1,5 +1,11 @@
-[gd_scene format=3 uid="uid://dy28qprjs4wqe"]
+[gd_scene load_steps=3 format=3 uid="uid://dy28qprjs4wqe"]
+
+[ext_resource type="Script" uid="uid://cip6tsk18q5wq" path="res://scripts/startmenu.gd" id="1_u4tt2"]
+[ext_resource type="PackedScene" uid="uid://r5qk2r6ktoum" path="res://scenes/buttons/startButton.tscn" id="2_t0y3k"]
 
 [node name="Startmenu" type="Node"]
+script = ExtResource("1_u4tt2")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="StartButton" parent="." instance=ExtResource("2_t0y3k")]
