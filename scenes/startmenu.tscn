@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dy28qprjs4wqe"]
+[gd_scene load_steps=4 format=3 uid="uid://dy28qprjs4wqe"]
 
 [ext_resource type="Script" uid="uid://cip6tsk18q5wq" path="res://scripts/startmenu.gd" id="1_u4tt2"]
 [ext_resource type="PackedScene" uid="uid://r5qk2r6ktoum" path="res://scenes/buttons/startButton.tscn" id="2_t0y3k"]
+[ext_resource type="PackedScene" uid="uid://d2qpwgie6okri" path="res://scenes/buttons/settingsButton.tscn" id="3_ids67"]
 
 [node name="Startmenu" type="Node"]
 script = ExtResource("1_u4tt2")
@@ -12,5 +13,11 @@ zoom = Vector2(2, 2)
 [node name="StartButton" parent="." instance=ExtResource("2_t0y3k")]
 offset_left = -43.0
 offset_right = 43.0
+
+[node name="Button" parent="." instance=ExtResource("3_ids67")]
+offset_left = -43.0
+offset_top = 44.0
+offset_right = 43.0
+offset_bottom = 84.0
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]

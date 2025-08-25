@@ -1,10 +1,10 @@
 [gd_scene load_steps=2 format=3 uid="uid://r5qk2r6ktoum"]
 
-[ext_resource type="PackedScene" uid="uid://dt4a4cadovi6q" path="res://scenes/button.tscn" id="1_mq8t3"]
+[ext_resource type="PackedScene" uid="uid://dt4a4cadovi6q" path="res://scenes/buttons/button.tscn" id="1_mq8t3"]
 
 [node name="StartButton" instance=ExtResource("1_mq8t3")]
 
 [node name="Text" parent="." index="0"]
-offset_top = 8.0
-offset_bottom = 24.0
+offset_left = 5.0
+offset_right = 81.0
 text = "START"

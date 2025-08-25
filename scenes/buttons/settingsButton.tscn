@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://d2qpwgie6okri"]
+
+[ext_resource type="PackedScene" uid="uid://dt4a4cadovi6q" path="res://scenes/buttons/button.tscn" id="1_3jq0j"]
+
+[node name="Button" instance=ExtResource("1_3jq0j")]
+
+[node name="Text" parent="." index="0"]
+offset_left = 4.0
+text = "SETTINGS"
