@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://b6gbpmuodhjyx" path="res://assets/images/tileset/Grass.png" id="1_e1kak"]
 [ext_resource type="Script" uid="uid://cgmea8kwrabv1" path="res://scripts/background.gd" id="1_y0upk"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bkp1e"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y0upk"]
 texture = ExtResource("1_e1kak")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -17,7 +17,7 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSet" id="TileSet_y0upk"]
 tile_size = Vector2i(32, 32)
-sources/0 = SubResource("TileSetAtlasSource_bkp1e")
+sources/0 = SubResource("TileSetAtlasSource_y0upk")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yarb5"]
 texture = ExtResource("1_e1kak")
