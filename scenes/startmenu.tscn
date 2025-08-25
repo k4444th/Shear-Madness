@@ -12,26 +12,31 @@ script = ExtResource("1_u4tt2")
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
 
-[node name="StartButton" parent="." instance=ExtResource("2_t0y3k")]
+[node name="Buttons" type="Node" parent="Camera2D"]
+
+[node name="StartButton" parent="Camera2D/Buttons" instance=ExtResource("2_t0y3k")]
 offset_left = -43.0
 offset_right = 43.0
 
-[node name="SettingsButton" parent="." instance=ExtResource("3_ids67")]
+[node name="SettingsButton" parent="Camera2D/Buttons" instance=ExtResource("3_ids67")]
 offset_left = -43.0
 offset_top = 35.0
 offset_right = 43.0
 offset_bottom = 75.0
 
-[node name="StoryButton" parent="." instance=ExtResource("4_cy0qo")]
+[node name="StoryButton" parent="Camera2D/Buttons" instance=ExtResource("4_cy0qo")]
 offset_left = -43.0
 offset_top = 70.0
 offset_right = 43.0
 offset_bottom = 110.0
 
-[node name="QuitButton" parent="." instance=ExtResource("5_ihhoq")]
+[node name="QuitButton" parent="Camera2D/Buttons" instance=ExtResource("5_ihhoq")]
 offset_left = -43.0
 offset_top = 105.0
 offset_right = 43.0
 offset_bottom = 145.0
 
-[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Camera2D/Buttons/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Camera2D/Buttons/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="Camera2D/Buttons/StoryButton" to="." method="_on_story_button_pressed"]
+[connection signal="pressed" from="Camera2D/Buttons/QuitButton" to="." method="_on_quit_button_pressed"]
