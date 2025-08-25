@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://dt4a4cadovi6q"]
+
+[ext_resource type="Texture2D" uid="uid://ctmfy7utm2lqk" path="res://assets/images/button/button.png" id="1_rhj8v"]
+[ext_resource type="Texture2D" uid="uid://cdbifw50wc0si" path="res://assets/images/button/buttonHover.png" id="2_3q610"]
+[ext_resource type="Script" uid="uid://b7gaeppub5ujg" path="res://scripts/button.gd" id="3_3q610"]
+
+[node name="Button" type="TextureButton"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("1_rhj8v")
+texture_pressed = ExtResource("2_3q610")
+texture_hover = ExtResource("2_3q610")
+script = ExtResource("3_3q610")
+
+[node name="Text" type="Label" parent="."]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 3.0
+offset_right = 81.0
+offset_bottom = 25.0
+theme_override_colors/font_color = Color(0.196078, 0.0980392, 0.129412, 1)
+theme_override_font_sizes/font_size = 15
+text = "Text"
+horizontal_alignment = 1
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
