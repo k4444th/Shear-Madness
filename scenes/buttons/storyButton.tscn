@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://e2v2iys5mky7"]
+
+[ext_resource type="PackedScene" uid="uid://dt4a4cadovi6q" path="res://scenes/buttons/button.tscn" id="1_bke4c"]
+
+[node name="StoryButton" instance=ExtResource("1_bke4c")]
+
+[node name="Text" parent="." index="0"]
+text = "STORY"
