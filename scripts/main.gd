@@ -23,9 +23,11 @@ func _ready() -> void:
 	camera.zoom = Gamemanger.gameData["settings"]["zoom"]
 	lama.connect("woolLevelChnaged", Callable(self, "updateWool"))
 	countdownDisplay.text = str(3)
-	countdownDisplay.global_position = lama.global_position - Vector2(countdownDisplay.size.x / 2, countdownDisplay.size.y * 2)
-	print(countdownDisplay.position)
+	countdownDisplay.global_position = lama.global_position - Vector2(countdownDisplay.size.x / 2, countdownDisplay.size.y)
 	countdownDisplay.visible = true
+	countdownDisplay.set_pivot_offset(countdownDisplay.size / 2)
+	var tween = get_tree().create_tween()
+	tween.tween_property(countdownDisplay, "scale", Vector2(2, 2), 1)
 	countdown.start()
 
 func _input(event):
@@ -83,9 +85,12 @@ func _on_timer_timeout() -> void:
 func _on_countdown_timeout() -> void:
 	count -= 1
 	countdownDisplay.text = str(count)
-	print(count)
+	countdownDisplay.set_pivot_offset(countdownDisplay.size / 2)
 	if count > 0:
+		countdownDisplay.scale = Vector2(1, 1)
 		countdown.start()
+		var tween = get_tree().create_tween()
+		tween.tween_property(countdownDisplay, "scale", Vector2(2, 2), 1)
 	else:
 		countdownDisplay.visible = false
 		timer.start()
