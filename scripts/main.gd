@@ -1,14 +1,17 @@
 extends Node
 
 var speed := 10.0
+var count := 3
 var targetPos: Vector2
 
 @onready var lama := $Lama
 @onready var timer := $Timer
+@onready var countdown := $Countdown
 @onready var camera := $Lama/Camera2D
 @onready var background := $Background
 @onready var hud := $CanvasLayer
 @onready var woolmeter := $CanvasLayer/Woolmeter
+@onready var countdownDisplay := $CountdownDisplay
 
 @onready var spitScene := preload("res://scenes/spit.tscn")
 @onready var farmerScene := preload("res://scenes/farmer.tscn")
@@ -19,8 +22,11 @@ func _ready() -> void:
 	woolmeter.updateWool(9)
 	camera.zoom = Gamemanger.gameData["settings"]["zoom"]
 	lama.connect("woolLevelChnaged", Callable(self, "updateWool"))
-	timer.start()
-	spawnFarmer()
+	countdownDisplay.text = str(3)
+	countdownDisplay.global_position = lama.global_position - Vector2(countdownDisplay.size.x / 2, countdownDisplay.size.y * 2)
+	print(countdownDisplay.position)
+	countdownDisplay.visible = true
+	countdown.start()
 
 func _input(event):
 	if event is InputEventMouseButton and event.pressed == true and lama.direction == Vector2.ZERO:
@@ -73,3 +79,14 @@ func _on_timer_timeout() -> void:
 		timer.wait_time *= 0.975
 		
 	timer.start()
+
+func _on_countdown_timeout() -> void:
+	count -= 1
+	countdownDisplay.text = str(count)
+	print(count)
+	if count > 0:
+		countdown.start()
+	else:
+		countdownDisplay.visible = false
+		timer.start()
+		spawnFarmer()
